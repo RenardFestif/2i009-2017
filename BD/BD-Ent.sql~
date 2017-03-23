@@ -1,0 +1,16 @@
+create table Employee (
+       numss number (15),
+       nomE varchar (20),
+       prenomE varchar (20),
+       VilleE varchar (20),
+       dateNaiss date,
+       dateCour date default Sysdate,
+
+constraint pk_emp primary-key (numss),
+constraint format_ss check (length(numss)=15),
+constraint ville_emp check (lower(ville) in ('paris','lyon','marseille')),
+constraint limit_age check (((dateCour-date)/365)<70),
+
+);
+
+       
